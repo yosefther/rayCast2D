@@ -3,6 +3,12 @@ revision = 3
 requires-python = ">=3.12"
 
 [[package]]
+name = "gamepy"
+version = "0.1.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/85/04/075533a9e3f6b81a275a78af212a67a76c8c71477229f30e59c273f00413/gamepy-0.1.5.tar.gz", hash = "sha256:128de7efd902548b4b14403fb984711e0e3908c6e419c0afdd7ed414055b9e40", size = 2612, upload-time = "2019-01-30T21:55:37.434Z" }
+
+[[package]]
 name = "pygame"
 version = "2.6.1"
 source = { registry = "https://pypi.org/simple" }
@@ -29,8 +35,12 @@ name = "raycast"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "gamepy" },
     { name = "pygame" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "pygame", specifier = ">=2.6.1" }]
+requires-dist = [
+    { name = "gamepy", specifier = ">=0.1.5" },
+    { name = "pygame", specifier = ">=2.6.1" },
+]
