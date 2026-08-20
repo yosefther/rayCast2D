@@ -21,15 +21,15 @@ class Player:
         self.walkDirection = 0
 
         # Rotation controls
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_RIGHT] | keys[pygame.K_d]:
             self.turnDirection = 1 
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] | keys[pygame.K_a]:
             self.turnDirection = -1
             
         # Movement controls  
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_UP] | keys[pygame.K_w]:
             self.walkDirection = 1  
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_DOWN] | keys[pygame.K_s]:
             self.walkDirection = -1  
 
         moveStep = self.walkDirection * self.moveSpeed
