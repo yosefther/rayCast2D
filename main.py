@@ -3,6 +3,7 @@ import pygame
 from map import Map
 from player import Player
 from settings import *
+from rayCaster import *
 screen = pygame.display.set_mode((WINDOW_WIDTH , WINDOW_HEIGHT))
 map = Map()
 player = Player()
@@ -18,5 +19,7 @@ while True :
     screen.fill((0,0,0))
     map.map_render(screen)
     player.player_render(screen)
-    
+    ray_caster = Raycaster(player)
+    ray_caster.RayCaster()
+    ray_caster.render(screen)
     pygame.display.update()
